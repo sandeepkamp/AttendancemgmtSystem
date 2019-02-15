@@ -1,0 +1,20 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Employee extends Model
+{
+    /**
+    * The attributes that aren't mass assignable.
+    *
+    * @var array
+    */
+    protected $guarded = [];
+
+    public function emp_records()
+    {
+        return $this->hasOne('App\EmployeeRecord', 'employee_id');
+    }
+}
